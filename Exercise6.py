@@ -8,9 +8,18 @@ A prime number is:
     
 """
 
-def isprime(arg1):
+def isPrime(arg1):
     return True
 
 
-    
-    
+while True:
+    value=input("Enter a number to be tested or 'stop' to stop the script: ")    
+    if value == 'stop':
+        print("Bye!")
+        break
+    value=int(value)
+    if isPrime(value):
+        print(value, "is a prime number")
+    else:
+        print(value, "is a not prime number")
+        
