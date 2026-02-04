@@ -9,7 +9,7 @@ A prime number is:
 """
 
 def isPrime(arg1):
-    return True
+    return True # TO BE COMPLETED
 
 
 while True:
