@@ -54,7 +54,7 @@ def addList_version2(list1, list2, default=0):
     newList=[]
     # First I do extend the shortest list:
     if len(list1) > len(list2):
-        list2.extend([default]*(len(list1)-len(list2)))
+        list2.extend([default]*(len(list1)-len(list2))) # [0] * 5 = [0,0,0,0,0]
     else:
         list1.extend([default]*(len(list2)-len(list1)))
     # Now the 2 list are of the same size!
@@ -62,7 +62,7 @@ def addList_version2(list1, list2, default=0):
         newList.append(list1[index]+list2[index])
     return newList
 
-addList=addList_version2
+#addList=addList_version2 # To test the second version
 
 d1=[5,6,7]
 d2=[20,10,11]
@@ -71,7 +71,9 @@ print(result) # [25, 16, 18]
 
 d1=[5,6,7,10,5]
 d2=[20,10,11]
-result=addList(d1,d2) 
+print("d2 before addList", d2)
+result=addList(d1,d2)
+print("d2 after addList", d2) 
 print(result)  # [25, 16, 18, 10, 5]
 
 d1=[5,6,7]

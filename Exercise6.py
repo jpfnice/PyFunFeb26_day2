@@ -3,7 +3,7 @@ Define a function to test if a number received as argument is a prime number or 
 
 A prime number is:
     an int
-    greater than 0
+    greater than 1
     that can only be divided by 1 and by itself
     
 """
@@ -32,23 +32,27 @@ def isPrime(aNumber):
         # we will see that later on
         print("Wrong argument given: should be an int!")
         return None
+    
     if aNumber <= 1:
         print("Wrong argument given: should be an int > 1!")
         return None
+    
     for divisor in range(2,aNumber):
-        if aNumber % divisor == 0:
+        if aNumber % divisor == 0: # divisor "is a divisor" of aNumber
             return False
+    
     return True
 
-
-while True:
-    value=input("Enter a number to be tested or 'stop' to stop the script: ")    
-    if value == 'stop':
-        print("Bye!")
-        break
-    value=int(value)
-    if isPrime(value):
-        print(value, "is a prime number")
-    else:
-        print(value, "is a not prime number")
-        
+if __name__ == "__main__":
+    
+    while True:
+        value=input("Enter a number to be tested or 'stop' to stop the script: ")    
+        if value == 'stop':
+            print("Bye!")
+            break
+        value=int(value)
+        if isPrime(value):
+            print(value, "is a prime number")
+        else:
+            print(value, "is a not prime number")
+            
