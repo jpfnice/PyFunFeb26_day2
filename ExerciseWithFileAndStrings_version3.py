@@ -35,7 +35,8 @@ for line in datafile:
     
     firstIndex=line.index(":") # position of the first ":"
     secondIndex=line.index(";")# position of the first ";"
-    thirdIndex=line.index(":",secondIndex) # position of the second ":" see help(str.index)
+    thirdIndex=line.index(":",secondIndex) # position of the second ":" 
+    # see help(str.index)
     
     firstValue=float(line[firstIndex+1:secondIndex]) # a slice to get the first float
     secondValue=float(line[thirdIndex+1:]) # a slice to get the second float
@@ -50,10 +51,18 @@ print(X2)
 Y1=[]
 Y2=[]
 
-for index in range(len(X1)):
-    Y1.append(math.cos(X1[index]))
-    Y2.append(math.cos(X2[index]))
+# The following code will only work if the 2 list X1 and X2 are 
+# of the same size:
+# for index in range(len(X1)): # index will vary from 0 to 33
+#     Y1.append(math.cos(X1[index]))
+#     Y2.append(math.sin(X2[index]))
 
+for e in X1:
+    Y1.append(math.cos(e))
+
+for e in X2:
+    Y2.append(math.sin(e))
+    
 print(Y1)
 print(Y2)
     

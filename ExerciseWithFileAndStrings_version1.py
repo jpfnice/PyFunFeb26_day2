@@ -62,10 +62,18 @@ print(X2)
 Y1=[]
 Y2=[]
 
-for index in range(len(X1)):
-    Y1.append(math.cos(X1[index]))
-    Y2.append(math.cos(X2[index]))
+# The following code will only work if the 2 list X1 and X2 are 
+# of the same size:
+# for index in range(len(X1)): # index will vary from 0 to 33
+#     Y1.append(math.cos(X1[index]))
+#     Y2.append(math.sin(X2[index]))
 
+for e in X1:
+    Y1.append(math.cos(e))
+
+for e in X2:
+    Y2.append(math.sin(e))
+    
 print(Y1)
 print(Y2)
     
